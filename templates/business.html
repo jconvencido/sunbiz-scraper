@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <title>{{ data.company_name }}</title> -->
+    <style>
+      /* Navigation Bar Styles */
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif; /* Use Arial or Helvetica */
+      }
+      .navbar {
+          background-color: #a00000; /* Red background */
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.5rem 5rem;
+      }
+      .navbar .logo {
+          font-size: 24px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+      }
+      .navbar .logo img {
+          height: 30px;
+          margin-right: 10px;
+      }
+      .navbar .buttons {
+          display: flex;
+          gap: 10px;
+          margin-left: 2rem;
+      }
+      .navbar .buttons button {
+          background-color: white;
+          color: #a00000;
+          border: 1px solid white;
+          border-radius: 5px;
+          padding: 5px 15px;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: bold;
+      }
+      .navbar .buttons button:hover {
+          background-color: #a00000;
+          color: white;
+      }
+      .navbar .contact {
+          font-size: 14px;
+          font-weight: bold;
+      }
+      /* Membership Section Styles */
+      .mebership-section {
+        display: flex;
+        flex-direction: row;
+      }
+  </style>
+</head>
+<body>
+    <p><strong>Umbraco Url:</strong>{{data.corporation_search_url}}</p>
+    <p><strong>Company Name:</strong>{{data.corporation_name}}</p>
+    <p><strong>Company Document ID:</strong>{{data.corporation_id}}</p>
+    <p><strong>Company Document ID:</strong>{{data.corporation_id}}</p>
+    <p><strong>Link:</strong>{{data.matching_link}}</p>
+
+    <p><strong>Principal Address:</strong> {{ data.principal_address }}</p>
+    <p><strong>Name:</strong>{{ data.clean_text }}</p>
+    <p><strong>Authorized Persons:</strong></p>
+    <ul>
+        {% for person in data.authorized_persons %}
+            <li>{{ person }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
